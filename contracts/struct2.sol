@@ -1,19 +1,19 @@
 pragma solidity ^0.8.0;
 
-contract struct2{
-
-    struct Employee{
+struct Employee{
         string name;
         uint age;
         address add;
     }
+
+contract struct2{
 
     Employee public emp;
     
     Employee[] public emps;
 
     function setvalue() public{
-         
+
         //type 1
         Employee memory emp1 = Employee("Aayu",21,0x5B38Da6a701c568545dCfcB03FcB875f56beddC4);
 
@@ -31,5 +31,14 @@ contract struct2{
         emp_temp.name = "aayushi";
         emp_temp.age = 21;
 
+        delete emp_temp.add;
+        //delete emp_temp.name;
+
+        delete emps[2];
+
     }
+}
+
+contract struct3{
+    Employee public emp_struct3 = Employee("aayu",4,msg.sender); 
 }
